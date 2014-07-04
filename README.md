@@ -19,15 +19,20 @@ So far:
 
  1. Clone this repo
  2. Create a virtualenv
+```
      $ cd government-by-numbers
      $ virtualenv .
      $ source bin/activate
+```
 
  3. Install requirements
+ ```
      $ pip install -r requirements.txt
-
+```
  4. Run
+ ```
      $ python app.py
+```
 
 ## Adding new numbers
 
