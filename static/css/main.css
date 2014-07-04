@@ -1,3 +1,19 @@
 body {
     padding-top:60px;
+    text-align:center;
+    font-size:3em;
+    line-height:2.5em;
+}
+
+h1 {
+    font-size:3em;
+    margin-bottom:0.4em;
+}
+
+input, button{
+  line-height:1.6em;
+}
+
+#tryagain {
+  padding-top:6em;
 }

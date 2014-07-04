@@ -1,4 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Hello</h1>
+  <h1>Government by numbers</h1>
+  <form action="/search" method="post">
+    <input type="text" name="q" value="" autocomplete="off">
+    <button type="submit">Search</button>
+    <p>
+      Postcode, Land Registry title ID, number plate, tax, national insurance or passport number
+    </p>
+  </form>
 {% endblock %}
