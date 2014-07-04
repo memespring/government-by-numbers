@@ -2,7 +2,6 @@ from flask import Flask, request, redirect, render_template
 import jinja2
 import os
 from identifiers import *
-import govuk
 
 app = Flask(__name__)
 app.debug = True
