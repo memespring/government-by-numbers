@@ -19,8 +19,17 @@ input, button{
 
 span {
   background:yellow;
+  padding:0 0.2em;
 }
 
 p {
   padding-top:1em;
+}
+
+#footer {
+  font-size:0.6em;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
 }
