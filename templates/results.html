@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>That looks like a .... <code>{{search_type}}</code></h1>
+  <h1>That looks like a ....
+        {% if search_types|length == 0 %}
+          Unknown thing
+        {% endif %}
+        {% if search_types|length == 1 %}
+          <span>{{search_types[0]}}</span>
+        {% else %}
+          {% for search_type in search_types %}
+            <span>{{search_type}}</span>
+            {% if loop.last == False %}or{% endif %}
+          {% endfor %}
+        {% endif %}
+  </h1>
 
   <p id="tryagain">
     <a href="/">Try another?</a>

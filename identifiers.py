@@ -1,5 +1,12 @@
 import re
 
+def is_unique_property_reference_number(subject):
+    pattern = "^[0-9]{1,12}$"
+    if re.match(pattern, subject):
+        return True
+    else:
+        return False
+
 def is_national_insurance_number(subject):
     pattern = "^\s*[a-zA-Z]{2}(?:\s*\d\s*){6}[a-zA-Z]?\s*$"
     if re.match(pattern, subject):

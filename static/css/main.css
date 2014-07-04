@@ -1,8 +1,7 @@
 body {
-    padding-top:60px;
+    padding:60px 3em;
     text-align:center;
     font-size:3em;
-    line-height:2.5em;
 }
 
 h1 {
@@ -16,4 +15,12 @@ input, button{
 
 #tryagain {
   padding-top:6em;
+}
+
+span {
+  background:yellow;
+}
+
+p {
+  padding-top:1em;
 }

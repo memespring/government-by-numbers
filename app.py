@@ -16,25 +16,30 @@ def index():
 def search():
 
     search_term = request.form.get('q', None)
-    search_type = 'unknown'
-    standard_results = []
+    search_types = []
 
     if is_postcode(search_term):
-        search_type = 'postcode'
-    elif is_land_title(search_term):
-        search_type = 'land registry title'
-    elif is_numberplate(search_term):
-        search_type = 'vehicle'
-    elif is_unique_tax_reference(search_term):
-        search_type = 'tax reference number'
-        standard_results = govuk.search('Self Assessment')
-    elif is_national_insurance_number(search_term):
-        search_type = 'national insurance number'
-    elif is_passport_number(search_term):
-        search_type = 'passport number'
-        standard_results = govuk.search('passport')
+        search_types.append('postcode')
 
-    return render_template('results.html', search_type=search_type, standard_results=standard_results)
+    if is_unique_property_reference_number(search_term):
+        search_types.append('unique property reference number')
+
+    if is_land_title(search_term):
+        search_types.append('land registry title')
+
+    if is_numberplate(search_term):
+        search_types.append('vehicle')
+
+    if is_unique_tax_reference(search_term):
+        search_types.append('tax reference number')
+
+    if is_national_insurance_number(search_term):
+        search_types.append('national insurance number')
+
+    if is_passport_number(search_term):
+        search_types.append('passport number')
+
+    return render_template('results.html', search_types=search_types)
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
